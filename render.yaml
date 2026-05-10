@@ -1,0 +1,14 @@
+# render.yaml — drop this in your GitHub repo root
+services:
+  - type: web
+    name: wizzy-bot-host
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python app.py
+    envVars:
+      - key: HOST_PASSWORD
+        value: wizzy123        # ← CHANGE THIS
+      - key: SECRET_KEY
+        generateValue: true
+      - key: PORT
+        value: "5000"
